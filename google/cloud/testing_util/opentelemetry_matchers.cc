@@ -18,6 +18,7 @@
 #include "google/cloud/opentelemetry_options.h"
 #include "absl/strings/str_join.h"
 #include <opentelemetry/context/propagation/global_propagator.h>
+#include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/sdk/trace/simple_processor.h>
 #include <opentelemetry/sdk/trace/tracer.h>
 #include <opentelemetry/sdk/trace/tracer_provider_factory.h>
@@ -80,7 +81,7 @@ void AttributeFormatter(
       *out += "std::vector<std::uint8_t>:[" + absl::StrJoin(v, ", ") + "]";
     }
   };
-  std::visit(Visitor{out}, kv.second);
+  opentelemetry::nostd::visit(Visitor{out}, kv.second);
 }
 }  // namespace
 

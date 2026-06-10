@@ -41,6 +41,10 @@
 #include "google/cloud/internal/streaming_read_rpc.h"
 #include <memory>
 #include <string>
+#ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
+#include "google/cloud/bigtable/internal/client_metrics_options.h"
+#include <opentelemetry/sdk/metrics/meter_provider.h>
+#endif
 
 namespace google {
 namespace cloud {
@@ -274,6 +278,21 @@ DataConnectionImpl::DataConnectionImpl(
                          std::make_unique<StubManager>(std::move(stub)),
                          std::move(operation_context_factory),
                          std::move(limiter), std::move(options)) {}
+
+DataConnectionImpl::~DataConnectionImpl() {
+#ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
+  if (options_.has<bigtable_internal::BigtableMeterProviderOption>()) {
+    auto api_provider =
+        options_.get<bigtable_internal::BigtableMeterProviderOption>();
+    auto sdk_provider = std::dynamic_pointer_cast<
+        opentelemetry::sdk::metrics::MeterProvider>(api_provider);
+    if (sdk_provider) {
+      // Flush metrics with a timeout to avoid blocking shutdown too long
+      sdk_provider->ForceFlush(std::chrono::microseconds(500000));
+    }
+  }
+#endif
+}
 
 Status DataConnectionImpl::Apply(std::string const& table_name,
                                  bigtable::SingleRowMutation mut) {

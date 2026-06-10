@@ -18,6 +18,7 @@
 #include "google/cloud/internal/algorithm.h"
 #include "google/cloud/version.h"
 #include <gmock/gmock.h>
+#include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/sdk/metrics/export/metric_producer.h>
 #include <opentelemetry/sdk/resource/resource.h>
 #include <variant>
@@ -134,15 +135,16 @@ TEST(MonitoringExporter, ExportSuccess) {
         resource.set_type("bigtable_client_raw");
         auto& labels = *resource.mutable_labels();
         auto const& attributes = pda.attributes.GetAttributes();
-        labels["project_id"] =
-            std::get<std::string>(attributes.find("project_id")->second);
-        labels["instance"] =
-            std::get<std::string>(attributes.find("instance")->second);
-        labels["cluster"] =
-            std::get<std::string>(attributes.find("cluster")->second);
-        labels["table"] =
-            std::get<std::string>(attributes.find("table")->second);
-        labels["zone"] = std::get<std::string>(attributes.find("zone")->second);
+        labels["project_id"] = opentelemetry::nostd::get<std::string>(
+            attributes.find("project_id")->second);
+        labels["instance"] = opentelemetry::nostd::get<std::string>(
+            attributes.find("instance")->second);
+        labels["cluster"] = opentelemetry::nostd::get<std::string>(
+            attributes.find("cluster")->second);
+        labels["table"] = opentelemetry::nostd::get<std::string>(
+            attributes.find("table")->second);
+        labels["zone"] = opentelemetry::nostd::get<std::string>(
+            attributes.find("zone")->second);
         return std::make_pair(labels["project_id"], resource);
       };
 

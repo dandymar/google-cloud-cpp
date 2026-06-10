@@ -82,6 +82,24 @@ struct AppProfileIdOption {
 };
 
 /**
+ * Option to configure the Bigtable Instance ID.
+ *
+ * This is used to construct resource labels for client-side metrics.
+ */
+struct InstanceIdOption {
+  using Type = std::string;
+};
+
+/**
+ * Option to configure the Bigtable Project ID.
+ *
+ * This is used to construct resource labels for client-side metrics.
+ */
+struct ProjectIdOption {
+  using Type = std::string;
+};
+
+/**
  * Read rows in reverse order.
  *
  * The rows will be streamed in reverse lexicographic order of the keys. This is
@@ -226,6 +244,27 @@ struct DynamicChannelPoolSizingPolicyOption {
   using Type = DynamicChannelPoolSizingPolicy;
 };
 
+/**
+ * Option to control whether the client exports gRPC transport metrics.
+ */
+struct EnableGrpcMetricsOption {
+  using Type = bool;
+};
+
+/**
+ * Option to control the frequency at which gRPC transport metrics are exported.
+ */
+struct GrpcMetricsPeriodOption {
+  using Type = std::chrono::milliseconds;
+};
+
+/**
+ * Option to control the timeout for exporting gRPC transport metrics.
+ */
+struct GrpcMetricsExportTimeoutOption {
+  using Type = std::chrono::milliseconds;
+};
+
 }  // namespace experimental
 
 /// The complete list of options accepted by `bigtable::*Client`
@@ -315,7 +354,10 @@ struct MetricsPeriodOption {
 using DataPolicyOptionList =
     OptionList<DataRetryPolicyOption, DataBackoffPolicyOption,
                IdempotentMutationPolicyOption, EnableMetricsOption,
-               MetricsPeriodOption>;
+               MetricsPeriodOption, ProjectIdOption, InstanceIdOption,
+               experimental::EnableGrpcMetricsOption,
+               experimental::GrpcMetricsPeriodOption,
+               experimental::GrpcMetricsExportTimeoutOption>;
 
 GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_END
 }  // namespace bigtable

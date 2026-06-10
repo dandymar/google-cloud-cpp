@@ -18,6 +18,7 @@
 #include "google/cloud/log.h"
 #include "absl/strings/str_replace.h"
 #include <opentelemetry/common/attribute_value.h>
+#include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/sdk/metrics/data/metric_data.h>
 #include <opentelemetry/sdk/metrics/export/metric_producer.h>
 #include <opentelemetry/semconv/incubating/service_attributes.h>
@@ -41,10 +42,10 @@ google::protobuf::Timestamp ToProtoTimestamp(
 google::monitoring::v3::TypedValue ToValue(
     opentelemetry::sdk::metrics::ValueType value) {
   google::monitoring::v3::TypedValue proto;
-  if (std::holds_alternative<double>(value)) {
-    proto.set_double_value(std::get<double>(value));
+  if (opentelemetry::nostd::holds_alternative<double>(value)) {
+    proto.set_double_value(opentelemetry::nostd::get<double>(value));
   } else {
-    proto.set_int64_value(std::get<std::int64_t>(value));
+    proto.set_int64_value(opentelemetry::nostd::get<std::int64_t>(value));
   }
   return proto;
 }
@@ -63,9 +64,9 @@ google::api::MetricDescriptor::ValueType ToValueType(
 }
 
 double AsDouble(opentelemetry::sdk::metrics::ValueType const& v) {
-  return std::holds_alternative<double>(v)
-             ? std::get<double>(v)
-             : static_cast<double>(std::get<std::int64_t>(v));
+  return opentelemetry::nostd::holds_alternative<double>(v)
+             ? opentelemetry::nostd::get<double>(v)
+             : static_cast<double>(opentelemetry::nostd::get<std::int64_t>(v));
 }
 
 std::vector<google::monitoring::v3::CreateTimeSeriesRequest> ToRequestsHelper(
@@ -127,7 +128,8 @@ void ToTimeSeriesHelper(
             return absl::nullopt;
           }
         };
-        auto ts = std::visit(Visitor{metric_data}, pda.point_data);
+        auto ts =
+            opentelemetry::nostd::visit(Visitor{metric_data}, pda.point_data);
         if (!ts) continue;
         ts->set_unit(metric_data.instrument_descriptor.unit_);
         ts_collector_fn(metric_data, pda, *std::move(ts));
@@ -203,9 +205,9 @@ google::monitoring::v3::TimeInterval ToNonGaugeTimeInterval(
   // the start value.
   //
   // https://cloud.google.com/monitoring/api/ref_v3/rpc/google.monitoring.v3#timeinterval
-  auto end_ts_nanos = (std::max)(
-      metric_data.end_ts.time_since_epoch(),
-      metric_data.start_ts.time_since_epoch() + std::chrono::milliseconds(1));
+  auto end_ts_nanos = (std::max)(metric_data.end_ts.time_since_epoch(),
+                                 metric_data.start_ts.time_since_epoch() +
+                                     std::chrono::milliseconds(1));
 
   google::monitoring::v3::TimeInterval proto;
   *proto.mutable_start_time() = ToProtoTimestamp(metric_data.start_ts);

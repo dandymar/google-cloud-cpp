@@ -16,6 +16,13 @@
 #include "google/cloud/bigtable/internal/client_options_defaults.h"
 #include "google/cloud/bigtable/internal/rpc_policy_parameters.h"
 #include "google/cloud/bigtable/options.h"
+#ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
+#include "google/cloud/bigtable/internal/client_metrics_exporter.h"
+#include "google/cloud/bigtable/internal/client_metrics_meter_provider.h"
+#include "google/cloud/bigtable/internal/client_metrics_options.h"
+#include "google/cloud/bigtable/internal/client_metrics_resource.h"
+#include "google/cloud/project.h"
+#endif  // GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 #include "google/cloud/common_options.h"
 #include "google/cloud/connection_options.h"
 #include "google/cloud/credentials.h"
@@ -23,6 +30,7 @@
 #include "google/cloud/internal/getenv.h"
 #include "google/cloud/internal/service_endpoint.h"
 #include "google/cloud/internal/user_agent_prefix.h"
+#include "google/cloud/log.h"
 #include "google/cloud/opentelemetry_options.h"
 #include "google/cloud/options.h"
 #include "google/cloud/universe_domain_options.h"
@@ -74,11 +82,13 @@ Options DefaultConnectionRefreshOptions(Options opts) {
     opts.set<MinConnectionRefreshOption>(kDefaultMinRefreshPeriod);
     opts.set<MaxConnectionRefreshOption>(kDefaultMaxRefreshPeriod);
   } else if (has_min && !has_max) {
-    opts.set<MaxConnectionRefreshOption>((std::max)(
-        opts.get<MinConnectionRefreshOption>(), kDefaultMaxRefreshPeriod));
+    opts.set<MaxConnectionRefreshOption>(
+        (std::max)(opts.get<MinConnectionRefreshOption>(),
+                   kDefaultMaxRefreshPeriod));
   } else if (!has_min && has_max) {
-    opts.set<MinConnectionRefreshOption>((std::min)(
-        opts.get<MaxConnectionRefreshOption>(), kDefaultMinRefreshPeriod));
+    opts.set<MinConnectionRefreshOption>(
+        (std::min)(opts.get<MaxConnectionRefreshOption>(),
+                   kDefaultMinRefreshPeriod));
   } else {
     // If the range is invalid, use the greater value as both the min and max
     auto const p = opts.get<MinConnectionRefreshOption>();
@@ -299,6 +309,56 @@ Options DefaultDataOptions(Options opts) {
         "bigtable.googleapis.com", opts);
     opts.set<AuthorityOption>(std::move(ep));
   }
+  if (!opts.has<bigtable::experimental::EnableGrpcMetricsOption>()) {
+    opts.set<bigtable::experimental::EnableGrpcMetricsOption>(true);
+  }
+  if (!opts.has<bigtable::experimental::GrpcMetricsPeriodOption>()) {
+    opts.set<bigtable::experimental::GrpcMetricsPeriodOption>(
+        std::chrono::seconds(60));
+  }
+  if (!opts.has<bigtable::experimental::GrpcMetricsExportTimeoutOption>()) {
+    opts.set<bigtable::experimental::GrpcMetricsExportTimeoutOption>(
+        std::chrono::seconds(30));
+  }
+
+#ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
+  auto emulator = GetEnv("BIGTABLE_EMULATOR_HOST");
+  if (!opts.has<ProjectIdOption>()) {
+    auto env_project_id = GetEnv("GOOGLE_CLOUD_PROJECT");
+    if (env_project_id && !env_project_id->empty()) {
+      opts.set<ProjectIdOption>(*std::move(env_project_id));
+    }
+  }
+  auto project_id = opts.get<ProjectIdOption>();
+
+  bool has_metrics_opt = opts.get<bigtable::experimental::EnableGrpcMetricsOption>();
+  bool is_safe = bigtable_internal::GrpcEnableMetricsIsSafe();
+  bool has_emulator = emulator.has_value();
+  bool has_project = !project_id.empty();
+
+  bool safe_to_enable =
+      has_metrics_opt && is_safe && !has_emulator && has_project;
+
+  if (safe_to_enable) {
+    auto resource = bigtable_internal::BuildBigtableClientResource(opts);
+    auto exporter = bigtable_internal::CreateClientMetricsExporter(
+        Project(project_id), resource, opts);
+    auto provider = bigtable_internal::MakeClientMetricsMeterProvider(
+        std::move(exporter), opts);
+    opts.set<bigtable_internal::BigtableMeterProviderOption>(provider);
+    auto plugin_status =
+        bigtable_internal::CreateBigtableGrpcOtelPlugin(provider, opts);
+    if (plugin_status.ok()) {
+      opts.set<bigtable_internal::BigtableGrpcOtelPluginOption>(
+          std::move(*plugin_status));
+    } else {
+      GCP_LOG(WARNING)
+          << "Failed to create Bigtable gRPC OpenTelemetry plugin: "
+          << plugin_status.status().ToString();
+    }
+  }
+#endif  // GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
+
   return opts.set<EndpointOption>(
       opts.get<::google::cloud::bigtable_internal::DataEndpointOption>());
 }

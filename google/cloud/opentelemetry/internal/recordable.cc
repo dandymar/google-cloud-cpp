@@ -21,6 +21,7 @@
 #include "absl/time/time.h"
 #include "absl/types/variant.h"
 #include <grpcpp/grpcpp.h>
+#include <opentelemetry/nostd/variant.h>
 #include <iterator>
 
 namespace google {
@@ -208,7 +209,7 @@ void AddAttributeImpl(
     std::size_t limit) {
   auto* proto = ProtoOrDrop(attributes, key, limit);
   if (proto) {
-    std::visit(AttributeVisitor{*proto}, value);
+    opentelemetry::nostd::visit(AttributeVisitor{*proto}, value);
   } else {
     attributes.set_dropped_attributes_count(
         attributes.dropped_attributes_count() + 1);

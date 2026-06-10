@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "google/cloud/bigtable/internal/operation_context_factory.h"
+#include "google/cloud/log.h"
 
 #ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 #include "google/cloud/bigtable/internal/metrics.h"
@@ -23,9 +24,11 @@
 #include "absl/strings/str_split.h"
 #include "google/api/monitored_resource.pb.h"
 #include <opentelemetry/context/runtime_context.h>
+#include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader.h>
 #include <opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_factory.h>
 #include <opentelemetry/sdk/metrics/meter_context_factory.h>
+#include <opentelemetry/sdk/metrics/meter_provider.h>
 #include <opentelemetry/sdk/metrics/meter_provider_factory.h>
 #endif  // GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 
@@ -163,6 +166,21 @@ MetricsOperationContextFactory::MetricsOperationContextFactory(
           std::move(client_uid), nullptr,
           std::make_shared<OperationContext::Clock>(), std::move(options)) {}
 
+MetricsOperationContextFactory::~MetricsOperationContextFactory() {
+  GCP_LOG(INFO) << "MetricsOperationContextFactory destroying. Provider use "
+                   "count before reset: "
+                << provider_.use_count();
+  if (provider_) {
+    auto sdk_provider =
+        static_cast<opentelemetry::sdk::metrics::MeterProvider*>(
+            provider_.get());
+    GCP_LOG(INFO) << "Calling ForceFlush on custom provider";
+    sdk_provider->ForceFlush(std::chrono::milliseconds(5000));
+  }
+  provider_.reset();
+  GCP_LOG(INFO) << "Provider reset done";
+}
+
 MetricsOperationContextFactory::MetricsOperationContextFactory(
     std::string client_uid, std::shared_ptr<Metric const> const& metric)
     : client_uid_(std::move(client_uid)) {
@@ -213,16 +231,16 @@ void MetricsOperationContextFactory::InitializeProvider(
         resource.set_type(kResourceType);
         auto& labels = *resource.mutable_labels();
         auto const& attributes = pda.attributes.GetAttributes();
-        labels[kProjectLabel] =
-            std::get<std::string>(attributes.find(kProjectLabel)->second);
-        labels[kInstanceLabel] =
-            std::get<std::string>(attributes.find(kInstanceLabel)->second);
-        labels[kTableLabel] =
-            std::get<std::string>(attributes.find(kTableLabel)->second);
-        labels[kClusterLabel] =
-            std::get<std::string>(attributes.find(kClusterLabel)->second);
-        labels[kZoneLabel] =
-            std::get<std::string>(attributes.find(kZoneLabel)->second);
+        labels[kProjectLabel] = opentelemetry::nostd::get<std::string>(
+            attributes.find(kProjectLabel)->second);
+        labels[kInstanceLabel] = opentelemetry::nostd::get<std::string>(
+            attributes.find(kInstanceLabel)->second);
+        labels[kTableLabel] = opentelemetry::nostd::get<std::string>(
+            attributes.find(kTableLabel)->second);
+        labels[kClusterLabel] = opentelemetry::nostd::get<std::string>(
+            attributes.find(kClusterLabel)->second);
+        labels[kZoneLabel] = opentelemetry::nostd::get<std::string>(
+            attributes.find(kZoneLabel)->second);
         return std::make_pair(labels[kProjectLabel], resource);
       };
 

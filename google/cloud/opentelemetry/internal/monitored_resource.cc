@@ -19,6 +19,7 @@
 #include "absl/types/optional.h"
 #include "absl/types/variant.h"
 #include <opentelemetry/common/attribute_value.h>
+#include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/sdk/resource/resource.h>
 #include <opentelemetry/semconv/incubating/cloud_attributes.h>
 #include <opentelemetry/semconv/incubating/faas_attributes.h>
@@ -236,7 +237,7 @@ MonitoredResourceProvider MakeProvider(
 
 std::string AsString(
     opentelemetry::sdk::common::OwnedAttributeValue const& attribute) {
-  return std::visit(AsStringVisitor{}, attribute);
+  return opentelemetry::nostd::visit(AsStringVisitor{}, attribute);
 }
 
 MonitoredResource ToMonitoredResource(

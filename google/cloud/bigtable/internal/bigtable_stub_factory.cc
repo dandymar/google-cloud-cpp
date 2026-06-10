@@ -23,6 +23,9 @@
 #include "google/cloud/bigtable/internal/connection_refresh_state.h"
 #include "google/cloud/bigtable/internal/defaults.h"
 #include "google/cloud/bigtable/options.h"
+#ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
+#include "google/cloud/bigtable/internal/client_metrics_options.h"
+#endif  // GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 #include "google/cloud/common_options.h"
 #include "google/cloud/grpc_options.h"
 #include "google/cloud/internal/algorithm.h"
@@ -45,6 +48,14 @@ std::shared_ptr<grpc::Channel> CreateGrpcChannel(
     int channel_id) {
   auto args = internal::MakeChannelArguments(options);
   args.SetInt("grpc.channel_id", channel_id);
+#ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
+  if (options.has<BigtableGrpcOtelPluginOption>()) {
+    auto const& plugin = options.get<BigtableGrpcOtelPluginOption>();
+    if (plugin) {
+      plugin->AddToChannelArguments(&args);
+    }
+  }
+#endif  // GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
   return auth.CreateChannel(options.get<EndpointOption>(), std::move(args));
 }
 

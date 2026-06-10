@@ -25,6 +25,7 @@
 #include "google/bigtable/v2/peer_info.pb.h"
 #include <gmock/gmock.h>
 #include <opentelemetry/context/runtime_context.h>
+#include <utility>
 
 namespace google {
 namespace cloud {
@@ -509,7 +510,8 @@ TEST(OperationLatencyTest, FirstAttemptSuccess) {
         return mock_meter;
       });
 
-  OperationLatency operation_latency("my-instrument-scope", mock_provider);
+  OperationLatency operation_latency("my-instrument-scope",
+                                     std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -582,7 +584,8 @@ TEST(OperationLatencyTest, ThirdAttemptSuccess) {
         return mock_meter;
       });
 
-  OperationLatency operation_latency("my-instrument-scope", mock_provider);
+  OperationLatency operation_latency("my-instrument-scope",
+                                     std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -670,7 +673,8 @@ TEST(OperationLatencyTest, UsesDefaultClusterAndZone) {
         return mock_meter;
       });
 
-  OperationLatency operation_latency("my-instrument-scope", mock_provider);
+  OperationLatency operation_latency("my-instrument-scope",
+                                     std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -742,7 +746,8 @@ TEST(AttemptLatencyTest, NoRetry) {
         return mock_meter;
       });
 
-  AttemptLatency attempt_latency("my-instrument-scope", mock_provider);
+  AttemptLatency attempt_latency("my-instrument-scope",
+                                 std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -845,7 +850,8 @@ TEST(AttemptLatencyTest, ThreeAttempts) {
         return mock_meter;
       });
 
-  AttemptLatency attempt_latency("my-instrument-scope", mock_provider);
+  AttemptLatency attempt_latency("my-instrument-scope",
+                                 std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -928,7 +934,8 @@ TEST(AttemptLatencyTest, UsesDefaultClusterAndZone) {
         return mock_meter;
       });
 
-  AttemptLatency attempt_latency("my-instrument-scope", mock_provider);
+  AttemptLatency attempt_latency("my-instrument-scope",
+                                 std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1003,7 +1010,8 @@ TEST(AttemptLatency2Test, NoRetry) {
         return mock_meter;
       });
 
-  AttemptLatency2 attempt_latency("my-instrument-scope", mock_provider);
+  AttemptLatency2 attempt_latency("my-instrument-scope",
+                                  std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1113,7 +1121,8 @@ TEST(AttemptLatency2Test, ThreeAttempts) {
         return mock_meter;
       });
 
-  AttemptLatency2 attempt_latency("my-instrument-scope", mock_provider);
+  AttemptLatency2 attempt_latency("my-instrument-scope",
+                                  std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1197,7 +1206,8 @@ TEST(AttemptLatency2Test, UsesDefaultClusterAndZone) {
         return mock_meter;
       });
 
-  AttemptLatency2 attempt_latency("my-instrument-scope", mock_provider);
+  AttemptLatency2 attempt_latency("my-instrument-scope",
+                                  std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1269,7 +1279,7 @@ TEST(RetryCountTest, NoRetry) {
         return mock_meter;
       });
 
-  RetryCount retry_count("my-instrument-scope", mock_provider);
+  RetryCount retry_count("my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1342,7 +1352,7 @@ TEST(RetryCountTest, ThreeAttempts) {
         return mock_meter;
       });
 
-  RetryCount retry_count("my-instrument-scope", mock_provider);
+  RetryCount retry_count("my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1425,7 +1435,7 @@ TEST(RetryCountTest, UsesDefaultClusterAndZone) {
         return mock_meter;
       });
 
-  RetryCount retry_count("my-instrument-scope", mock_provider);
+  RetryCount retry_count("my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1498,7 +1508,7 @@ TEST(FirstResponseLatency, Success) {
       });
 
   FirstResponseLatency first_response_latency("my-instrument-scope",
-                                              mock_provider);
+                                              std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1563,7 +1573,7 @@ TEST(FirstResponseLatency, NoDataReceived) {
       });
 
   FirstResponseLatency first_response_latency("my-instrument-scope",
-                                              mock_provider);
+                                              std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1641,7 +1651,7 @@ TEST(FirstResponseLatency, UsesDefaultClusterAndZone) {
       });
 
   FirstResponseLatency first_response_latency("my-instrument-scope",
-                                              mock_provider);
+                                              std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1755,7 +1765,7 @@ TEST(ServerLatency, SingleSuccess) {
         return mock_meter;
       });
 
-  ServerLatency server_latency("my-instrument-scope", mock_provider);
+  ServerLatency server_latency("my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1830,7 +1840,7 @@ TEST(ServerLatency, UsesDefaultClusterAndZone) {
         return mock_meter;
       });
 
-  ServerLatency server_latency("my-instrument-scope", mock_provider);
+  ServerLatency server_latency("my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1915,7 +1925,7 @@ TEST(ServerLatency, TwoAttempts) {
         return mock_meter;
       });
 
-  ServerLatency server_latency("my-instrument-scope", mock_provider);
+  ServerLatency server_latency("my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -1985,7 +1995,7 @@ TEST(ServerLatency, NoServerTiming) {
         return mock_meter;
       });
 
-  ServerLatency server_latency("my-instrument-scope", mock_provider);
+  ServerLatency server_latency("my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -2052,7 +2062,7 @@ TEST(ConnectivityErrorCount, MissingResourceLabels) {
       });
 
   ConnectivityErrorCount connectivity_error_count("my-instrument-scope",
-                                                  mock_provider);
+                                                  std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -2132,7 +2142,7 @@ TEST(ConnectivityErrorCount, Success) {
       });
 
   ConnectivityErrorCount connectivity_error_count("my-instrument-scope",
-                                                  mock_provider);
+                                                  std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -2208,7 +2218,7 @@ TEST(ConnectivityErrorCount, OkAndMissingServerTiming) {
       });
 
   ConnectivityErrorCount connectivity_error_count("my-instrument-scope",
-                                                  mock_provider);
+                                                  std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -2277,7 +2287,7 @@ TEST(ConnectivityErrorCount, DeadlineExceededAndMissingServerTiming) {
       });
 
   ConnectivityErrorCount connectivity_error_count("my-instrument-scope",
-                                                  mock_provider);
+                                                  std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -2344,8 +2354,8 @@ TEST(ApplicationBlockingLatency, Success) {
         return mock_meter;
       });
 
-  ApplicationBlockingLatency application_blocking_latency("my-instrument-scope",
-                                                          mock_provider);
+  ApplicationBlockingLatency application_blocking_latency(
+      "my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
@@ -2431,8 +2441,8 @@ TEST(ApplicationBlockingLatency, StreamingData) {
         return mock_meter;
       });
 
-  ApplicationBlockingLatency application_blocking_latency("my-instrument-scope",
-                                                          mock_provider);
+  ApplicationBlockingLatency application_blocking_latency(
+      "my-instrument-scope", std::move(mock_provider));
   ResourceLabels resource_labels{"my-project-id", "my-instance", "my-table", "",
                                  ""};
   DataLabels data_labels{"my-method",     "my-streaming",   "my-client-name",
