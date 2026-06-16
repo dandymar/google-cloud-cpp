@@ -90,8 +90,6 @@ class MetricsOperationContextFactory : public OperationContextFactory {
  public:
   explicit MetricsOperationContextFactory(std::string client_uid,
                                           Options options = {});
-  ~MetricsOperationContextFactory() override;
-
   // Used for injecting a MockMetricsServiceConnection for testing.
   MetricsOperationContextFactory(
       std::string client_uid,

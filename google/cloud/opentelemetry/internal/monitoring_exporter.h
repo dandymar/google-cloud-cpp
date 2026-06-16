@@ -74,7 +74,7 @@ class MonitoringExporter final
       opentelemetry::sdk::metrics::ResourceMetrics const& data) noexcept
       override;
 
-  bool ForceFlush(std::chrono::microseconds) noexcept override { return true; }
+  bool ForceFlush(std::chrono::microseconds) noexcept override { return false; }
 
   bool Shutdown(std::chrono::microseconds) noexcept override { return true; }
 

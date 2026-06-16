@@ -166,21 +166,6 @@ MetricsOperationContextFactory::MetricsOperationContextFactory(
           std::move(client_uid), nullptr,
           std::make_shared<OperationContext::Clock>(), std::move(options)) {}
 
-MetricsOperationContextFactory::~MetricsOperationContextFactory() {
-  GCP_LOG(INFO) << "MetricsOperationContextFactory destroying. Provider use "
-                   "count before reset: "
-                << provider_.use_count();
-  if (provider_) {
-    auto sdk_provider =
-        static_cast<opentelemetry::sdk::metrics::MeterProvider*>(
-            provider_.get());
-    GCP_LOG(INFO) << "Calling ForceFlush on custom provider";
-    sdk_provider->ForceFlush(std::chrono::milliseconds(5000));
-  }
-  provider_.reset();
-  GCP_LOG(INFO) << "Provider reset done";
-}
-
 MetricsOperationContextFactory::MetricsOperationContextFactory(
     std::string client_uid, std::shared_ptr<Metric const> const& metric)
     : client_uid_(std::move(client_uid)) {

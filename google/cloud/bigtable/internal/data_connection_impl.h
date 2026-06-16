@@ -39,7 +39,7 @@ bigtable::Row TransformReadModifyWriteRowResponse(
 
 class DataConnectionImpl : public bigtable::DataConnection {
  public:
-  ~DataConnectionImpl() override;
+  ~DataConnectionImpl() override = default;
 
   DataConnectionImpl(std::unique_ptr<BackgroundThreads> background,
                      std::unique_ptr<StubManager> stub_manager,
