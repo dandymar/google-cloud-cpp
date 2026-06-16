@@ -16,21 +16,21 @@
 
 #include "google/cloud/bigtable/internal/client_metrics_resource.h"
 #include "google/cloud/bigtable/options.h"
-#include "google/cloud/opentelemetry/resource_detector.h"
 #include "google/cloud/common_options.h"
 #include "google/cloud/internal/getenv.h"
 #include "google/cloud/internal/random.h"
+#include "google/cloud/opentelemetry/resource_detector.h"
 #include "absl/strings/match.h"
 #include "absl/strings/str_cat.h"
 #include "absl/strings/str_join.h"
 #include "absl/strings/str_replace.h"
 #include <grpcpp/grpcpp.h>
-#include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/sdk/resource/resource.h>
 #include <opentelemetry/semconv/incubating/cloud_attributes.h>
 #include <opentelemetry/semconv/incubating/host_attributes.h>
 #include <opentelemetry/semconv/incubating/k8s_attributes.h>
 #include <opentelemetry/semconv/incubating/service_attributes.h>
+#include <opentelemetry/nostd/variant.h>
 #include <algorithm>
 #include <cctype>
 
@@ -74,9 +74,7 @@ std::string ExtractRegion(std::string const& zone) {
 
 std::string GenerateUuid() {
   auto gen = internal::MakeDefaultPRNG();
-  return absl::StrCat(
-      "cpp-",
-      internal::Sample(gen, 16, "abcdefghijklmnopqrstuvwxyz0123456789"));
+  return absl::StrCat("cpp-", internal::Sample(gen, 16, "abcdefghijklmnopqrstuvwxyz0123456789"));
 }
 
 }  // namespace
@@ -109,18 +107,14 @@ google::api::MonitoredResource BuildBigtableClientResource(
   auto* labels = mr.mutable_labels();
 
   // 1. Static project and instance attributes
-  std::string project_id =
-      options.get<google::cloud::bigtable::ProjectIdOption>();
-  std::string instance_id =
-      options.get<google::cloud::bigtable::InstanceIdOption>();
-  std::string app_profile =
-      options.get<google::cloud::bigtable::AppProfileIdOption>();
+  std::string project_id = options.get<google::cloud::bigtable::ProjectIdOption>();
+  std::string instance_id = options.get<google::cloud::bigtable::InstanceIdOption>();
+  std::string app_profile = options.get<google::cloud::bigtable::AppProfileIdOption>();
 
   (*labels)["project_id"] = project_id;
   (*labels)["instance"] = instance_id;
   (*labels)["app_profile"] = app_profile.empty() ? "default" : app_profile;
-  (*labels)["client_name"] =
-      absl::StrCat("cpp.Bigtable/", google::cloud::bigtable::version_string());
+  (*labels)["client_name"] = absl::StrCat("cpp.Bigtable/", google::cloud::bigtable::version_string());
   (*labels)["uuid"] = GenerateUuid();
 
   // 2. Default fallback values

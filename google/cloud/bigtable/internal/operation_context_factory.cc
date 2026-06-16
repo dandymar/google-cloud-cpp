@@ -13,7 +13,6 @@
 // limitations under the License.
 
 #include "google/cloud/bigtable/internal/operation_context_factory.h"
-#include "google/cloud/log.h"
 
 #ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 #include "google/cloud/bigtable/internal/metrics.h"
@@ -24,12 +23,11 @@
 #include "absl/strings/str_split.h"
 #include "google/api/monitored_resource.pb.h"
 #include <opentelemetry/context/runtime_context.h>
-#include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader.h>
 #include <opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_factory.h>
 #include <opentelemetry/sdk/metrics/meter_context_factory.h>
-#include <opentelemetry/sdk/metrics/meter_provider.h>
 #include <opentelemetry/sdk/metrics/meter_provider_factory.h>
+#include <opentelemetry/nostd/variant.h>
 #endif  // GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 
 namespace google {
@@ -216,16 +214,16 @@ void MetricsOperationContextFactory::InitializeProvider(
         resource.set_type(kResourceType);
         auto& labels = *resource.mutable_labels();
         auto const& attributes = pda.attributes.GetAttributes();
-        labels[kProjectLabel] = opentelemetry::nostd::get<std::string>(
-            attributes.find(kProjectLabel)->second);
-        labels[kInstanceLabel] = opentelemetry::nostd::get<std::string>(
-            attributes.find(kInstanceLabel)->second);
-        labels[kTableLabel] = opentelemetry::nostd::get<std::string>(
-            attributes.find(kTableLabel)->second);
-        labels[kClusterLabel] = opentelemetry::nostd::get<std::string>(
-            attributes.find(kClusterLabel)->second);
-        labels[kZoneLabel] = opentelemetry::nostd::get<std::string>(
-            attributes.find(kZoneLabel)->second);
+        labels[kProjectLabel] =
+            opentelemetry::nostd::get<std::string>(attributes.find(kProjectLabel)->second);
+        labels[kInstanceLabel] =
+            opentelemetry::nostd::get<std::string>(attributes.find(kInstanceLabel)->second);
+        labels[kTableLabel] =
+            opentelemetry::nostd::get<std::string>(attributes.find(kTableLabel)->second);
+        labels[kClusterLabel] =
+            opentelemetry::nostd::get<std::string>(attributes.find(kClusterLabel)->second);
+        labels[kZoneLabel] =
+            opentelemetry::nostd::get<std::string>(attributes.find(kZoneLabel)->second);
         return std::make_pair(labels[kProjectLabel], resource);
       };
 

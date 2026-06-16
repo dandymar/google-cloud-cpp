@@ -30,17 +30,14 @@ namespace bigtable_internal {
 GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 
 /**
- * Creates the MeterProvider configured with custom latency boundaries for
- * Bigtable client metrics.
+ * Creates the MeterProvider configured with custom latency boundaries for Bigtable client metrics.
  */
-std::shared_ptr<opentelemetry::metrics::MeterProvider>
-MakeClientMetricsMeterProvider(
+std::shared_ptr<opentelemetry::metrics::MeterProvider> MakeClientMetricsMeterProvider(
     std::unique_ptr<opentelemetry::sdk::metrics::PushMetricExporter> exporter,
     Options const& options);
 
 /**
- * Creates the local gRPC OpenTelemetry plugin configured for Bigtable client
- * metrics.
+ * Creates the local gRPC OpenTelemetry plugin configured for Bigtable client metrics.
  */
 absl::StatusOr<std::shared_ptr<grpc::experimental::OpenTelemetryPlugin>>
 CreateBigtableGrpcOtelPlugin(

@@ -15,12 +15,14 @@
 #ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 
 #include "google/cloud/bigtable/internal/client_metrics_resource.h"
-#include "google/cloud/bigtable/options.h"
-#include "google/cloud/internal/detect_gcp.h"
+
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 #include <opentelemetry/sdk/resource/resource.h>
 #include <opentelemetry/sdk/resource/resource_detector.h>
+
+#include "google/cloud/bigtable/options.h"
+#include "google/cloud/internal/detect_gcp.h"
 
 namespace google {
 namespace cloud {

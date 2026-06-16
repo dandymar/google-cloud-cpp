@@ -32,12 +32,12 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /**
  * Constructs the Cloud Monitoring exporter for client-side metrics.
  *
- * Configures the resource, metric prefix formatting, and service metrics
- * options.
+ * Configures the resource, metric prefix formatting, and service metrics options.
  */
 std::unique_ptr<opentelemetry::sdk::metrics::PushMetricExporter>
 CreateClientMetricsExporter(
-    Project project, google::api::MonitoredResource const& monitored_resource,
+    Project project,
+    google::api::MonitoredResource const& monitored_resource,
     Options const& options);
 
 GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_END

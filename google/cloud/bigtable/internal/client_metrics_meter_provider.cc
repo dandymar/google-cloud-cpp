@@ -41,11 +41,10 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 namespace {
 
 std::vector<double> MakeLatencyHistogramBoundaries() {
-  return {0.0,   0.001, 0.002, 0.003, 0.004, 0.005, 0.006,  0.008,
-          0.01,  0.013, 0.016, 0.02,  0.025, 0.03,  0.04,   0.05,
-          0.065, 0.08,  0.1,   0.13,  0.16,  0.2,   0.25,   0.3,
-          0.4,   0.5,   0.65,  0.8,   1.0,   2.0,   5.0,    10.0,
-          20.0,  50.0,  100.0, 200.0, 400.0, 800.0, 1600.0, 3200.0};
+  return {0.0,   0.001, 0.002, 0.003, 0.004, 0.005, 0.006, 0.008, 0.01,  0.013,
+          0.016, 0.02,  0.025, 0.03,  0.04,  0.05,  0.065, 0.08,  0.1,   0.13,
+          0.16,  0.2,   0.25,  0.3,   0.4,   0.5,   0.65,  0.8,   1.0,   2.0,
+          5.0,   10.0,  20.0,  50.0,  100.0, 200.0, 400.0, 800.0, 1600.0, 3200.0};
 }
 
 void AddHistogramView(opentelemetry::sdk::metrics::MeterProvider& provider,
@@ -61,8 +60,7 @@ void AddHistogramView(opentelemetry::sdk::metrics::MeterProvider& provider,
       std::shared_ptr<opentelemetry::sdk::metrics::AggregationConfig>(
           std::move(histogram_aggregation_config));
 
-  auto description =
-      "A view of " + name + " with custom boundaries for Bigtable";
+  auto description = "A view of " + name + " with custom boundaries for Bigtable";
 
 #if OPENTELEMETRY_VERSION_MAJOR > 1 || \
     (OPENTELEMETRY_VERSION_MAJOR == 1 && OPENTELEMETRY_VERSION_MINOR >= 23)
@@ -110,8 +108,7 @@ auto MakeReaderOptions(Options const& options) {
   } else {
     reader_options.export_interval_millis = std::chrono::seconds(60);
   }
-  auto timeout =
-      options.get<bigtable::experimental::GrpcMetricsExportTimeoutOption>();
+  auto timeout = options.get<bigtable::experimental::GrpcMetricsExportTimeoutOption>();
   if (timeout.count() > 0) {
     reader_options.export_timeout_millis = timeout;
   } else {
@@ -122,8 +119,7 @@ auto MakeReaderOptions(Options const& options) {
 
 }  // namespace
 
-std::shared_ptr<opentelemetry::metrics::MeterProvider>
-MakeClientMetricsMeterProvider(
+std::shared_ptr<opentelemetry::metrics::MeterProvider> MakeClientMetricsMeterProvider(
     std::unique_ptr<opentelemetry::sdk::metrics::PushMetricExporter> exporter,
     Options const& options) {
 #if OPENTELEMETRY_VERSION_MAJOR > 1 || \
@@ -138,8 +134,7 @@ MakeClientMetricsMeterProvider(
 #endif
   auto* p =
       static_cast<opentelemetry::sdk::metrics::MeterProvider*>(provider.get());
-  AddHistogramView(*p, MakeLatencyHistogramBoundaries(),
-                   "grpc.client.attempt.duration", "s");
+  AddHistogramView(*p, MakeLatencyHistogramBoundaries(), "grpc.client.attempt.duration", "s");
 
   auto reader_options = MakeReaderOptions(options);
 #if OPENTELEMETRY_VERSION_MAJOR > 1 || OPENTELEMETRY_VERSION_MINOR >= 10
@@ -179,20 +174,14 @@ CreateBigtableGrpcOtelPlugin(
   };
 
   auto authority = options.get<AuthorityOption>();
-  auto scope_filter =
-      [authority = std::move(authority)](
-          grpc::OpenTelemetryPluginBuilder::ChannelScope const& scope) {
-        return scope.default_authority() == authority;
-      };
-
-  auto disable_metrics = std::vector<absl::string_view>{
-      absl::string_view("grpc.client.attempt.started"),
+  auto scope_filter = [authority = std::move(authority)](
+                           grpc::OpenTelemetryPluginBuilder::ChannelScope const& scope) {
+    return scope.default_authority() == authority;
   };
 
   return grpc::OpenTelemetryPluginBuilder()
       .SetMeterProvider(provider)
       .EnableMetrics(metrics)
-      .DisableMetrics(disable_metrics)
       .AddOptionalLabel(absl::string_view("grpc.lb.locality"))
       .SetGenericMethodAttributeFilter([](absl::string_view target) {
         return absl::StartsWith(target, "google.bigtable.v2");

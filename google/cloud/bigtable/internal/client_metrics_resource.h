@@ -17,12 +17,13 @@
 
 #ifdef GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 
-#include "google/cloud/internal/detect_gcp.h"
-#include "google/cloud/options.h"
-#include "google/cloud/version.h"
 #include <google/api/monitored_resource.pb.h>
 #include <opentelemetry/sdk/resource/resource_detector.h>
 #include <memory>
+
+#include "google/cloud/internal/detect_gcp.h"
+#include "google/cloud/options.h"
+#include "google/cloud/version.h"
 
 namespace google {
 namespace cloud {
@@ -30,11 +31,10 @@ namespace bigtable_internal {
 GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 
 /**
- * Checks if the compiled gRPC runtime version is safe for OpenTelemetry
- * metrics.
+ * Checks if the compiled gRPC runtime version is safe for OpenTelemetry metrics.
  *
- * gRPC versions <= 1.64.0 (with some exceptions) have a memory corruption bug
- * when OTel metrics are registered, which can lead to application crashes.
+ * gRPC versions <= 1.64.0 (with some exceptions) have a memory corruption bug when OTel metrics
+ * are registered, which can lead to application crashes.
  */
 bool GrpcEnableMetricsIsSafe(int major, int minor, int patch);
 bool GrpcEnableMetricsIsSafe();

@@ -19,7 +19,6 @@
 
 #include "google/cloud/version.h"
 #include <grpcpp/ext/otel_plugin.h>
-#include <opentelemetry/metrics/meter_provider.h>
 #include <memory>
 
 namespace google {
@@ -30,20 +29,10 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /**
  * Internal option to store the configured gRPC OpenTelemetry plugin instance.
  *
- * This allows the plugin to be passed down to the stub factory where gRPC
- * channels are created.
+ * This allows the plugin to be passed down to the stub factory where gRPC channels are created.
  */
 struct BigtableGrpcOtelPluginOption {
   using Type = std::shared_ptr<grpc::experimental::OpenTelemetryPlugin>;
-};
-
-/**
- * Internal option to store the MeterProvider used for Bigtable metrics.
- *
- * This allows the connection to flush metrics on shutdown.
- */
-struct BigtableMeterProviderOption {
-  using Type = std::shared_ptr<opentelemetry::metrics::MeterProvider>;
 };
 
 GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_END
