@@ -16,7 +16,9 @@
 
 #include "google/cloud/bigtable/internal/client_metrics_exporter.h"
 #include "google/cloud/monitoring/v3/metric_connection.h"
+#include "google/cloud/opentelemetry/internal/monitoring_exporter.h"
 #include "google/cloud/opentelemetry/monitoring_exporter.h"
+#include <set>
 #include "google/cloud/grpc_options.h"
 #include "google/cloud/universe_domain_options.h"
 #include "absl/strings/str_cat.h"
@@ -48,6 +50,11 @@ CreateClientMetricsExporter(
       .set<otel::MetricNameFormatterOption>([](std::string const& name) {
         return absl::StrCat("bigtable.googleapis.com/internal/client/",
                             absl::StrReplaceAll(name, {{".", "/"}}));
+      })
+      .set<otel_internal::ResourceFilterDataFnOption>({
+          "service_name",
+          "service_namespace",
+          "service_instance_id",
       });
 
   return otel::MakeMonitoringExporter(std::move(project), std::move(conn),

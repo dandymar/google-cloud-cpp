@@ -181,6 +181,10 @@ CreateBigtableGrpcOtelPlugin(
 
   return grpc::OpenTelemetryPluginBuilder()
       .SetMeterProvider(provider)
+      .DisableAllMetrics()
+      .EnableMetrics({
+          grpc::OpenTelemetryPluginBuilder::kClientAttemptDurationInstrumentName,
+      })
       .EnableMetrics(metrics)
       .AddOptionalLabel(absl::string_view("grpc.lb.locality"))
       .SetGenericMethodAttributeFilter([](absl::string_view target) {

@@ -27,7 +27,6 @@
 #include <opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_factory.h>
 #include <opentelemetry/sdk/metrics/meter_context_factory.h>
 #include <opentelemetry/sdk/metrics/meter_provider_factory.h>
-#include <opentelemetry/nostd/variant.h>
 #endif  // GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS
 
 namespace google {
@@ -215,15 +214,15 @@ void MetricsOperationContextFactory::InitializeProvider(
         auto& labels = *resource.mutable_labels();
         auto const& attributes = pda.attributes.GetAttributes();
         labels[kProjectLabel] =
-            opentelemetry::nostd::get<std::string>(attributes.find(kProjectLabel)->second);
+            std::get<std::string>(attributes.find(kProjectLabel)->second);
         labels[kInstanceLabel] =
-            opentelemetry::nostd::get<std::string>(attributes.find(kInstanceLabel)->second);
+            std::get<std::string>(attributes.find(kInstanceLabel)->second);
         labels[kTableLabel] =
-            opentelemetry::nostd::get<std::string>(attributes.find(kTableLabel)->second);
+            std::get<std::string>(attributes.find(kTableLabel)->second);
         labels[kClusterLabel] =
-            opentelemetry::nostd::get<std::string>(attributes.find(kClusterLabel)->second);
+            std::get<std::string>(attributes.find(kClusterLabel)->second);
         labels[kZoneLabel] =
-            opentelemetry::nostd::get<std::string>(attributes.find(kZoneLabel)->second);
+            std::get<std::string>(attributes.find(kZoneLabel)->second);
         return std::make_pair(labels[kProjectLabel], resource);
       };
 

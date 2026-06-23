@@ -290,7 +290,7 @@ target_link_libraries(
            protobuf::libprotobuf)
 set(GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS_ENABLED OFF)
 if ((TARGET gRPC::grpcpp_otel_plugin)
-    AND ("opentelemetry" IN_LIST GOOGLE_CLOUD_CPP_ENABLE)
+    AND (TARGET google-cloud-cpp::opentelemetry)
     AND (TARGET opentelemetry-cpp::metrics))
     set(GOOGLE_CLOUD_CPP_BIGTABLE_WITH_OTEL_METRICS_ENABLED ON)
     target_compile_definitions(
