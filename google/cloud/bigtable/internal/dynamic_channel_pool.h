@@ -24,6 +24,7 @@
 #include "google/cloud/bigtable/options.h"
 #include "google/cloud/completion_queue.h"
 #include "google/cloud/internal/random.h"
+#include "google/cloud/log.h"
 #include "google/cloud/version.h"
 #include <cmath>
 #include <functional>
@@ -188,6 +189,11 @@ class DynamicChannelPool
         transport_type_(transport_type) {
     std::scoped_lock lk(mu_);
     SetSizeDecreaseCooldownTimer(lk);
+    GCP_LOG(INFO) << "DynamicChannelPool[" << instance_name_
+                  << "]: Initialized pool with " << channels_.size()
+                  << " channel(s); active channels=" << channels_.size()
+                  << ", draining channels=0, total pool channels="
+                  << channels_.size();
   }
 
   struct ChannelSelectionData {
@@ -320,22 +326,37 @@ class DynamicChannelPool
     channels_.insert(channels_.end(),
                      std::make_move_iterator(new_stubs.begin()),
                      std::make_move_iterator(new_stubs.end()));
+    GCP_LOG(INFO) << "DynamicChannelPool[" << instance_name_
+                  << "]: Added " << new_stubs.size()
+                  << " channel(s); active channels=" << channels_.size()
+                  << ", draining channels=" << draining_channels_.size()
+                  << ", total pool channels="
+                  << (channels_.size() + draining_channels_.size());
   }
 
   // Calls CompletionQueuer::MakeRelativeTimer using
   // remove_channel_polling_interval with a callback that executes
   // RemoveChannels.
   void ScheduleRemoveChannels(std::scoped_lock<std::mutex> const&) {
-    if (remove_channel_poll_timer_.valid()) return;
+    if (remove_channel_poll_timer_.valid()) {
+      GCP_LOG(WARNING) << "DynamicChannelPool[" << instance_name_
+                       << "]: ScheduleRemoveChannels skipped because remove_channel_poll_timer_ is still valid! (Draining channels trapped="
+                       << draining_channels_.size() << ")";
+      return;
+    }
     std::weak_ptr<DynamicChannelPool<T>> foo = this->shared_from_this();
     remove_channel_poll_timer_ =
         cq_.MakeRelativeTimer(sizing_policy_.remove_channel_polling_interval)
             .then(
                 [weak = std::move(foo)](
                     future<StatusOr<std::chrono::system_clock::time_point>> f) {
-                  if (f.get().ok()) {
-                    if (auto self = weak.lock()) {
+                  auto const status = f.get();
+                  if (auto self = weak.lock()) {
+                    if (status.ok()) {
                       self->RemoveChannels();
+                    } else {
+                      std::scoped_lock lk(self->mu_);
+                      self->remove_channel_poll_timer_ = future<void>{};
                     }
                   }
                 });
@@ -347,6 +368,7 @@ class DynamicChannelPool
   // non-empty.
   void RemoveChannels() {
     std::scoped_lock lk(mu_);
+    remove_channel_poll_timer_ = future<void>{};
     std::sort(draining_channels_.begin(), draining_channels_.end(),
               [](std::shared_ptr<ChannelUsage<T>> const& a,
                  std::shared_ptr<ChannelUsage<T>> const& b) {
@@ -365,6 +387,12 @@ class DynamicChannelPool
       }
 
       draining_channels_.pop_back();
+      GCP_LOG(INFO) << "DynamicChannelPool[" << instance_name_
+                    << "]: Removed 1 drained channel from pool. Active channels="
+                    << channels_.size()
+                    << ", remaining draining channels=" << draining_channels_.size()
+                    << ", total pool channels="
+                    << (channels_.size() + draining_channels_.size());
     }
   }
 
@@ -422,6 +450,12 @@ class DynamicChannelPool
       // Channel/stub creation is expensive, instead of making the current RPC
       // wait on this, use an existing channel right now, and schedule a channel
       // to be added.
+      GCP_LOG(INFO) << "DynamicChannelPool[" << instance_name_
+                    << "]: Scale-up triggered (avg RPCs="
+                    << average_rpcs_per_channel << " > max="
+                    << sizing_policy_.maximum_average_outstanding_rpcs_per_channel
+                    << "); active pool size=" << channels_.size()
+                    << ", pending=" << num_pending_channels_;
       ScheduleAddChannels(lk);
       return;
     }
@@ -439,6 +473,15 @@ class DynamicChannelPool
       std::swap(channels_[random_channel], channels_.back());
       draining_channels_.push_back(std::move(channels_.back()));
       channels_.pop_back();
+      GCP_LOG(INFO) << "DynamicChannelPool[" << instance_name_
+                    << "]: Cooldown downscale triggered (avg RPCs="
+                    << average_rpcs_per_channel << " < min="
+                    << sizing_policy_.minimum_average_outstanding_rpcs_per_channel
+                    << "); moved 1 channel to draining. Active channels="
+                    << channels_.size()
+                    << ", draining channels=" << draining_channels_.size()
+                    << ", total pool channels="
+                    << (channels_.size() + draining_channels_.size());
       ScheduleRemoveChannels(lk);
       SetSizeDecreaseCooldownTimer(lk);
     }

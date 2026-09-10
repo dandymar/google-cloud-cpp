@@ -624,6 +624,78 @@ TEST_F(DynamicChannelPoolTest, ScheduleRemoveChannelsNotAlreadyPending) {
   fake_cq_impl_->SimulateCompletion(false);
 }
 
+TEST_F(DynamicChannelPoolTest,
+       ScheduleRemoveChannelsSucceedsAfterPreviousRemoveChannels) {
+  auto instance_name =
+      bigtable::InstanceResource(Project("my-project"), "my-instance")
+          .FullName();
+  auto refresh_state = std::make_shared<ConnectionRefreshState>(
+      fake_cq_impl_, std::chrono::milliseconds(1),
+      std::chrono::milliseconds(10));
+
+  std::vector<std::shared_ptr<ChannelUsage<BigtableStub>>> channels;
+  DynamicChannelPoolSizingPolicy sizing_policy;
+
+  MockFunction<StatusOr<std::shared_ptr<ChannelUsage<BigtableStub>>>(
+      std::uint32_t, std::string const&, StubManager::Priming)>
+      stub_factory_fn;
+
+  // Pool creation should set the pool size increase cooldown timer.
+  EXPECT_CALL(*mock_cq_impl_, MakeRelativeTimer)
+      .WillOnce([&](std::chrono::nanoseconds ns) {
+        EXPECT_THAT(ns.count(),
+                    Eq(std::chrono::nanoseconds(
+                           sizing_policy.pool_size_decrease_cooldown_interval)
+                           .count()));
+        return make_ready_future(StatusOr(std::chrono::system_clock::now()));
+      });
+
+  auto pool = DynamicChannelPool<BigtableStub>::Create(
+      instance_name, CompletionQueue(mock_cq_impl_), channels, refresh_state,
+      stub_factory_fn.AsStdFunction(), sizing_policy,
+      TransportType::kCloudPath);
+  DynamicChannelPoolTestWrapper wrapper(pool);
+
+  promise<StatusOr<std::chrono::system_clock::time_point>> timer_promise1;
+  promise<StatusOr<std::chrono::system_clock::time_point>> timer_promise2;
+
+  EXPECT_CALL(*mock_cq_impl_, MakeRelativeTimer)
+      .WillOnce([&](std::chrono::nanoseconds ns) {
+        EXPECT_THAT(ns.count(),
+                    Eq(std::chrono::nanoseconds(
+                           sizing_policy.remove_channel_polling_interval)
+                           .count()));
+        return timer_promise1.get_future();
+      })
+      .WillOnce([&](std::chrono::nanoseconds ns) {
+        EXPECT_THAT(ns.count(),
+                    Eq(std::chrono::nanoseconds(
+                           sizing_policy.remove_channel_polling_interval)
+                           .count()));
+        return timer_promise2.get_future();
+      });
+
+  // First scheduling cycle.
+  {
+    auto lk = wrapper.CreateLock();
+    wrapper.ScheduleRemoveChannels(lk);
+  }
+
+  // Complete first timer and let the continuation execute RemoveChannels.
+  timer_promise1.set_value(std::chrono::system_clock::now());
+
+  // Second scheduling cycle after first cycle completed.
+  {
+    auto lk = wrapper.CreateLock();
+    wrapper.ScheduleRemoveChannels(lk);
+  }
+
+  // Complete second timer.
+  timer_promise2.set_value(std::chrono::system_clock::now());
+
+  fake_cq_impl_->SimulateCompletion(false);
+}
+
 TEST_F(DynamicChannelPoolTest, RemoveChannelsLoneChannelDrained) {
   auto instance_name =
       bigtable::InstanceResource(Project("my-project"), "my-instance")
