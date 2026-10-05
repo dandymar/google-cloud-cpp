@@ -40,6 +40,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the globalVmExtensionPolicies resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/globalVmExtensionPolicies
 ///
+/// This client uses GlobalVmExtensionPolicies version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -125,8 +127,8 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.AggregatedListGlobalVmExtensionPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L122}
-  /// [google.cloud.cpp.compute.v1.VmExtensionPoliciesScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_058.proto#L375}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.AggregatedListGlobalVmExtensionPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L123}
+  /// [google.cloud.cpp.compute.v1.VmExtensionPoliciesScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_060.proto#L375}
   ///
   // clang-format on
   StreamRange<
@@ -172,8 +174,8 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.AggregatedListGlobalVmExtensionPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L122}
-  /// [google.cloud.cpp.compute.v1.VmExtensionPoliciesScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_058.proto#L375}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.AggregatedListGlobalVmExtensionPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L123}
+  /// [google.cloud.cpp.compute.v1.VmExtensionPoliciesScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_060.proto#L375}
   ///
   // clang-format on
   StreamRange<
@@ -217,7 +219,7 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.DeleteGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L237}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.DeleteGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L231}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -284,7 +286,7 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.DeleteGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L237}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.DeleteGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L231}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -345,8 +347,8 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.GetGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L274}
-  /// [google.cloud.cpp.compute.v1.GlobalVmExtensionPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_058.proto#L27}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.GetGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L268}
+  /// [google.cloud.cpp.compute.v1.GlobalVmExtensionPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_060.proto#L27}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::GlobalVmExtensionPolicy>
@@ -378,8 +380,8 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.GetGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L274}
-  /// [google.cloud.cpp.compute.v1.GlobalVmExtensionPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_058.proto#L27}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.GetGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L268}
+  /// [google.cloud.cpp.compute.v1.GlobalVmExtensionPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_060.proto#L27}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::GlobalVmExtensionPolicy>
@@ -415,7 +417,7 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.InsertGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L287}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.InsertGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L281}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -474,7 +476,7 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.InsertGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L287}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.InsertGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L281}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -543,8 +545,8 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.ListGlobalVmExtensionPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L317}
-  /// [google.cloud.cpp.compute.v1.GlobalVmExtensionPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_058.proto#L27}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.ListGlobalVmExtensionPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L311}
+  /// [google.cloud.cpp.compute.v1.GlobalVmExtensionPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_060.proto#L27}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::GlobalVmExtensionPolicy>
@@ -583,8 +585,8 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.ListGlobalVmExtensionPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L317}
-  /// [google.cloud.cpp.compute.v1.GlobalVmExtensionPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_058.proto#L27}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.ListGlobalVmExtensionPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L311}
+  /// [google.cloud.cpp.compute.v1.GlobalVmExtensionPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_060.proto#L27}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::GlobalVmExtensionPolicy>
@@ -621,7 +623,7 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.UpdateGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L418}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.UpdateGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L405}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -681,7 +683,7 @@ class GlobalVmExtensionPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.UpdateGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L418}
+  /// [google.cloud.cpp.compute.global_vm_extension_policies.v1.UpdateGlobalVmExtensionPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/global_vm_extension_policies/v1/global_vm_extension_policies.proto#L405}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>

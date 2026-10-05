@@ -40,6 +40,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the regionCompositeHealthChecks resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/regionCompositeHealthChecks
 ///
+/// This client uses RegionCompositeHealthChecks version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -126,8 +128,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.AggregatedListRegionCompositeHealthChecksRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L145}
-  /// [google.cloud.cpp.compute.v1.CompositeHealthChecksScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_026.proto#L384}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.AggregatedListRegionCompositeHealthChecksRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L146}
+  /// [google.cloud.cpp.compute.v1.CompositeHealthChecksScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L384}
   ///
   // clang-format on
   StreamRange<std::pair<std::string, google::cloud::cpp::compute::v1::
@@ -172,8 +174,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.AggregatedListRegionCompositeHealthChecksRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L145}
-  /// [google.cloud.cpp.compute.v1.CompositeHealthChecksScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_026.proto#L384}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.AggregatedListRegionCompositeHealthChecksRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L146}
+  /// [google.cloud.cpp.compute.v1.CompositeHealthChecksScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L384}
   ///
   // clang-format on
   StreamRange<std::pair<std::string, google::cloud::cpp::compute::v1::
@@ -211,7 +213,7 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.DeleteCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L260}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.DeleteCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L254}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -268,7 +270,7 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.DeleteCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L260}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.DeleteCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L254}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -330,8 +332,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.GetCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L298}
-  /// [google.cloud.cpp.compute.v1.CompositeHealthCheck]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_026.proto#L29}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.GetCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L292}
+  /// [google.cloud.cpp.compute.v1.CompositeHealthCheck]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L29}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::CompositeHealthCheck>
@@ -363,8 +365,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.GetCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L298}
-  /// [google.cloud.cpp.compute.v1.CompositeHealthCheck]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_026.proto#L29}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.GetCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L292}
+  /// [google.cloud.cpp.compute.v1.CompositeHealthCheck]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L29}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::CompositeHealthCheck>
@@ -395,8 +397,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.GetHealthRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L315}
-  /// [google.cloud.cpp.compute.v1.CompositeHealthCheckHealth]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_026.proto#L227}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.GetHealthRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L309}
+  /// [google.cloud.cpp.compute.v1.CompositeHealthCheckHealth]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L227}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::CompositeHealthCheckHealth>
@@ -428,8 +430,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.GetHealthRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L315}
-  /// [google.cloud.cpp.compute.v1.CompositeHealthCheckHealth]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_026.proto#L227}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.GetHealthRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L309}
+  /// [google.cloud.cpp.compute.v1.CompositeHealthCheckHealth]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L227}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::CompositeHealthCheckHealth>
@@ -466,7 +468,7 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.InsertCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L332}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.InsertCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L326}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -526,7 +528,7 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.InsertCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L332}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.InsertCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L326}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -596,8 +598,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.ListRegionCompositeHealthChecksRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L368}
-  /// [google.cloud.cpp.compute.v1.CompositeHealthCheck]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_026.proto#L29}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.ListRegionCompositeHealthChecksRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L362}
+  /// [google.cloud.cpp.compute.v1.CompositeHealthCheck]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L29}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::CompositeHealthCheck>
@@ -637,8 +639,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.ListRegionCompositeHealthChecksRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L368}
-  /// [google.cloud.cpp.compute.v1.CompositeHealthCheck]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_026.proto#L29}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.ListRegionCompositeHealthChecksRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L362}
+  /// [google.cloud.cpp.compute.v1.CompositeHealthCheck]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L29}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::CompositeHealthCheck>
@@ -680,7 +682,7 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.PatchCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L473}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.PatchCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L460}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -744,7 +746,7 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.PatchCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L473}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.PatchCompositeHealthCheckRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L460}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -807,8 +809,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.TestIamPermissionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L516}
-  /// [google.cloud.cpp.compute.v1.TestPermissionsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_171.proto#L30}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.TestIamPermissionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L503}
+  /// [google.cloud.cpp.compute.v1.TestPermissionsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_177.proto#L30}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::TestPermissionsResponse>
@@ -843,8 +845,8 @@ class RegionCompositeHealthChecksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.TestIamPermissionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L516}
-  /// [google.cloud.cpp.compute.v1.TestPermissionsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_171.proto#L30}
+  /// [google.cloud.cpp.compute.region_composite_health_checks.v1.TestIamPermissionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_composite_health_checks/v1/region_composite_health_checks.proto#L503}
+  /// [google.cloud.cpp.compute.v1.TestPermissionsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_177.proto#L30}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::TestPermissionsResponse>

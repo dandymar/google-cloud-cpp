@@ -40,6 +40,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the networkEdgeSecurityServices resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/networkEdgeSecurityServices
 ///
+/// This client uses NetworkEdgeSecurityServices version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -126,8 +128,8 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.AggregatedListNetworkEdgeSecurityServicesRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L108}
-  /// [google.cloud.cpp.compute.v1.NetworkEdgeSecurityServicesScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_100.proto#L217}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.AggregatedListNetworkEdgeSecurityServicesRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L109}
+  /// [google.cloud.cpp.compute.v1.NetworkEdgeSecurityServicesScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_104.proto#L217}
   ///
   // clang-format on
   StreamRange<std::pair<std::string, google::cloud::cpp::compute::v1::
@@ -172,8 +174,8 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.AggregatedListNetworkEdgeSecurityServicesRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L108}
-  /// [google.cloud.cpp.compute.v1.NetworkEdgeSecurityServicesScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_100.proto#L217}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.AggregatedListNetworkEdgeSecurityServicesRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L109}
+  /// [google.cloud.cpp.compute.v1.NetworkEdgeSecurityServicesScopedList]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_104.proto#L217}
   ///
   // clang-format on
   StreamRange<std::pair<std::string, google::cloud::cpp::compute::v1::
@@ -211,7 +213,7 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.DeleteNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L223}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.DeleteNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L217}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -266,7 +268,7 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.DeleteNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L223}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.DeleteNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L217}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -328,8 +330,8 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.GetNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L261}
-  /// [google.cloud.cpp.compute.v1.NetworkEdgeSecurityService]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_100.proto#L25}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.GetNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L255}
+  /// [google.cloud.cpp.compute.v1.NetworkEdgeSecurityService]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_104.proto#L25}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::NetworkEdgeSecurityService>
@@ -361,8 +363,8 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.GetNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L261}
-  /// [google.cloud.cpp.compute.v1.NetworkEdgeSecurityService]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_100.proto#L25}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.GetNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L255}
+  /// [google.cloud.cpp.compute.v1.NetworkEdgeSecurityService]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_104.proto#L25}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::NetworkEdgeSecurityService>
@@ -400,7 +402,7 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.InsertNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L278}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.InsertNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L272}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -460,7 +462,7 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.InsertNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L278}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.InsertNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L272}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -531,7 +533,7 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.PatchNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L318}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.PatchNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L312}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -594,7 +596,7 @@ class NetworkEdgeSecurityServicesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.network_edge_security_services.v1.PatchNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L318}
+  /// [google.cloud.cpp.compute.network_edge_security_services.v1.PatchNetworkEdgeSecurityServiceRequest]: @cloud_cpp_reference_link{google/cloud/compute/network_edge_security_services/v1/network_edge_security_services.proto#L312}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>

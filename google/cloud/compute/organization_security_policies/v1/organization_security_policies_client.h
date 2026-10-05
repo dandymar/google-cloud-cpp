@@ -40,6 +40,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the organizationSecurityPolicies resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/organizationSecurityPolicies
 ///
+/// This client uses OrganizationSecurityPolicies version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -130,7 +132,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.AddAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L297}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.AddAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L298}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> AddAssociation(
@@ -196,7 +198,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.AddAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L297}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.AddAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L298}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> AddAssociation(
@@ -265,7 +267,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.AddRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L330}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.AddRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L331}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> AddRule(
@@ -326,7 +328,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.AddRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L330}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.AddRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L331}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> AddRule(
@@ -395,7 +397,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.CopyRulesRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L356}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.CopyRulesRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L357}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> CopyRules(
@@ -451,7 +453,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.CopyRulesRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L356}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.CopyRulesRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L357}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> CopyRules(
@@ -519,7 +521,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.DeleteSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L382}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.DeleteSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L383}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -574,7 +576,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.DeleteSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L382}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.DeleteSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L383}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -637,8 +639,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L424}
-  /// [google.cloud.cpp.compute.v1.SecurityPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_141.proto#L31}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L425}
+  /// [google.cloud.cpp.compute.v1.SecurityPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_147.proto#L31}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::SecurityPolicy> GetSecurityPolicy(
@@ -672,8 +674,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L424}
-  /// [google.cloud.cpp.compute.v1.SecurityPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_141.proto#L31}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L425}
+  /// [google.cloud.cpp.compute.v1.SecurityPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_147.proto#L31}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::SecurityPolicy> GetSecurityPolicy(
@@ -705,8 +707,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L404}
-  /// [google.cloud.cpp.compute.v1.SecurityPolicyAssociation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_141.proto#L306}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L405}
+  /// [google.cloud.cpp.compute.v1.SecurityPolicyAssociation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_147.proto#L306}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::SecurityPolicyAssociation>
@@ -741,8 +743,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L404}
-  /// [google.cloud.cpp.compute.v1.SecurityPolicyAssociation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_141.proto#L306}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L405}
+  /// [google.cloud.cpp.compute.v1.SecurityPolicyAssociation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_147.proto#L306}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::SecurityPolicyAssociation>
@@ -773,8 +775,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L414}
-  /// [google.cloud.cpp.compute.v1.SecurityPolicyRule]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_141.proto#L504}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L415}
+  /// [google.cloud.cpp.compute.v1.SecurityPolicyRule]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_147.proto#L504}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::SecurityPolicyRule> GetRule(
@@ -808,8 +810,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L414}
-  /// [google.cloud.cpp.compute.v1.SecurityPolicyRule]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_141.proto#L504}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.GetRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L415}
+  /// [google.cloud.cpp.compute.v1.SecurityPolicyRule]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_147.proto#L504}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::SecurityPolicyRule> GetRule(
@@ -853,7 +855,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.InsertSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L431}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.InsertSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L432}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -931,8 +933,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.ListOrganizationSecurityPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L465}
-  /// [google.cloud.cpp.compute.v1.SecurityPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_141.proto#L31}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.ListOrganizationSecurityPoliciesRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L466}
+  /// [google.cloud.cpp.compute.v1.SecurityPolicy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_147.proto#L31}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::SecurityPolicy>
@@ -970,8 +972,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.ListAssociationsRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L458}
-  /// [google.cloud.cpp.compute.v1.OrganizationSecurityPoliciesListAssociationsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_108.proto#L26}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.ListAssociationsRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L459}
+  /// [google.cloud.cpp.compute.v1.OrganizationSecurityPoliciesListAssociationsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_112.proto#L26}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::
@@ -1005,8 +1007,8 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.ListPreconfiguredExpressionSetsRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L565}
-  /// [google.cloud.cpp.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_111.proto#L29}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.ListPreconfiguredExpressionSetsRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L559}
+  /// [google.cloud.cpp.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_115.proto#L29}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::
@@ -1046,7 +1048,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.MoveRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L665}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.MoveRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L652}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> Move(
@@ -1101,7 +1103,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.MoveRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L665}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.MoveRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L652}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> Move(
@@ -1170,7 +1172,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.PatchSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L719}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.PatchSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L706}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -1231,7 +1233,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.PatchSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L719}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.PatchSecurityPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L706}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -1303,7 +1305,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.PatchRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L690}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.PatchRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L677}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> PatchRule(
@@ -1365,7 +1367,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.PatchRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L690}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.PatchRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L677}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> PatchRule(
@@ -1434,7 +1436,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.RemoveAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L745}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.RemoveAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L732}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -1490,7 +1492,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.RemoveAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L745}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.RemoveAssociationRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L732}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -1560,7 +1562,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.RemoveRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L770}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.RemoveRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L757}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> RemoveRule(
@@ -1616,7 +1618,7 @@ class OrganizationSecurityPoliciesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.organization_security_policies.v1.RemoveRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L770}
+  /// [google.cloud.cpp.compute.organization_security_policies.v1.RemoveRuleRequest]: @cloud_cpp_reference_link{google/cloud/compute/organization_security_policies/v1/organization_security_policies.proto#L757}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> RemoveRule(

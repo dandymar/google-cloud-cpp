@@ -38,6 +38,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the hosts resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/hosts
 ///
+/// This client uses Hosts version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -112,8 +114,8 @@ class HostsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.hosts.v1.GetHostRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L74}
-  /// [google.cloud.cpp.compute.v1.Host]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_066.proto#L25}
+  /// [google.cloud.cpp.compute.hosts.v1.GetHostRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L75}
+  /// [google.cloud.cpp.compute.v1.Host]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_068.proto#L25}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Host> GetHost(
@@ -145,8 +147,8 @@ class HostsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.hosts.v1.GetHostRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L74}
-  /// [google.cloud.cpp.compute.v1.Host]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_066.proto#L25}
+  /// [google.cloud.cpp.compute.hosts.v1.GetHostRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L75}
+  /// [google.cloud.cpp.compute.v1.Host]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_068.proto#L25}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Host> GetHost(
@@ -186,7 +188,7 @@ class HostsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.hosts.v1.GetVersionRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L96}
+  /// [google.cloud.cpp.compute.hosts.v1.GetVersionRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L97}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> GetVersion(
@@ -245,7 +247,7 @@ class HostsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.hosts.v1.GetVersionRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L96}
+  /// [google.cloud.cpp.compute.hosts.v1.GetVersionRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L97}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> GetVersion(
@@ -315,8 +317,8 @@ class HostsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.hosts.v1.ListHostsRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L133}
-  /// [google.cloud.cpp.compute.v1.Host]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_066.proto#L25}
+  /// [google.cloud.cpp.compute.hosts.v1.ListHostsRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L134}
+  /// [google.cloud.cpp.compute.v1.Host]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_068.proto#L25}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::Host> ListHosts(
@@ -356,8 +358,8 @@ class HostsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.hosts.v1.ListHostsRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L133}
-  /// [google.cloud.cpp.compute.v1.Host]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_066.proto#L25}
+  /// [google.cloud.cpp.compute.hosts.v1.ListHostsRequest]: @cloud_cpp_reference_link{google/cloud/compute/hosts/v1/hosts.proto#L134}
+  /// [google.cloud.cpp.compute.v1.Host]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_068.proto#L25}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::Host> ListHosts(

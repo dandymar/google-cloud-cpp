@@ -37,6 +37,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the reliabilityRisks resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/reliabilityRisks
 ///
+/// This client uses ReliabilityRisks version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -107,8 +109,8 @@ class ReliabilityRisksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.reliability_risks.v1.GetReliabilityRiskRequest]: @cloud_cpp_reference_link{google/cloud/compute/reliability_risks/v1/reliability_risks.proto#L60}
-  /// [google.cloud.cpp.compute.v1.ReliabilityRisk]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_130.proto#L25}
+  /// [google.cloud.cpp.compute.reliability_risks.v1.GetReliabilityRiskRequest]: @cloud_cpp_reference_link{google/cloud/compute/reliability_risks/v1/reliability_risks.proto#L61}
+  /// [google.cloud.cpp.compute.v1.ReliabilityRisk]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_136.proto#L25}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::ReliabilityRisk> GetReliabilityRisk(
@@ -139,8 +141,8 @@ class ReliabilityRisksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.reliability_risks.v1.GetReliabilityRiskRequest]: @cloud_cpp_reference_link{google/cloud/compute/reliability_risks/v1/reliability_risks.proto#L60}
-  /// [google.cloud.cpp.compute.v1.ReliabilityRisk]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_130.proto#L25}
+  /// [google.cloud.cpp.compute.reliability_risks.v1.GetReliabilityRiskRequest]: @cloud_cpp_reference_link{google/cloud/compute/reliability_risks/v1/reliability_risks.proto#L61}
+  /// [google.cloud.cpp.compute.v1.ReliabilityRisk]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_136.proto#L25}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::ReliabilityRisk> GetReliabilityRisk(
@@ -176,8 +178,8 @@ class ReliabilityRisksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.reliability_risks.v1.ListReliabilityRisksRequest]: @cloud_cpp_reference_link{google/cloud/compute/reliability_risks/v1/reliability_risks.proto#L71}
-  /// [google.cloud.cpp.compute.v1.ReliabilityRisk]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_130.proto#L25}
+  /// [google.cloud.cpp.compute.reliability_risks.v1.ListReliabilityRisksRequest]: @cloud_cpp_reference_link{google/cloud/compute/reliability_risks/v1/reliability_risks.proto#L72}
+  /// [google.cloud.cpp.compute.v1.ReliabilityRisk]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_136.proto#L25}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::ReliabilityRisk>
@@ -216,8 +218,8 @@ class ReliabilityRisksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.reliability_risks.v1.ListReliabilityRisksRequest]: @cloud_cpp_reference_link{google/cloud/compute/reliability_risks/v1/reliability_risks.proto#L71}
-  /// [google.cloud.cpp.compute.v1.ReliabilityRisk]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_130.proto#L25}
+  /// [google.cloud.cpp.compute.reliability_risks.v1.ListReliabilityRisksRequest]: @cloud_cpp_reference_link{google/cloud/compute/reliability_risks/v1/reliability_risks.proto#L72}
+  /// [google.cloud.cpp.compute.v1.ReliabilityRisk]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_136.proto#L25}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::ReliabilityRisk>

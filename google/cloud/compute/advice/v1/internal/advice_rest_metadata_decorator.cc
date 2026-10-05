@@ -47,9 +47,27 @@ AdviceRestMetadata::CalendarMode(
   return child_->CalendarMode(rest_context, options, request);
 }
 
+StatusOr<google::cloud::cpp::compute::v1::CapacityAdviceResponse>
+AdviceRestMetadata::Capacity(
+    rest_internal::RestContext& rest_context, Options const& options,
+    google::cloud::cpp::compute::advice::v1::CapacityRequest const& request) {
+  SetMetadata(rest_context, options);
+  return child_->Capacity(rest_context, options, request);
+}
+
+StatusOr<google::cloud::cpp::compute::v1::CapacityHistoryResponse>
+AdviceRestMetadata::CapacityHistory(
+    rest_internal::RestContext& rest_context, Options const& options,
+    google::cloud::cpp::compute::advice::v1::CapacityHistoryRequest const&
+        request) {
+  SetMetadata(rest_context, options);
+  return child_->CapacityHistory(rest_context, options, request);
+}
+
 void AdviceRestMetadata::SetMetadata(rest_internal::RestContext& rest_context,
                                      Options const& options,
                                      std::vector<std::string> const& params) {
+  rest_context.AddHeader("x-goog-api-version", "2026-09-01");
   google::cloud::rest_internal::SetMetadata(rest_context, options, params,
                                             api_client_header_);
 }

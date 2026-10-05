@@ -38,6 +38,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the rolloutPlans resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/rolloutPlans
 ///
+/// This client uses RolloutPlans version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -114,7 +116,7 @@ class RolloutPlansClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.rollout_plans.v1.DeleteRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L85}
+  /// [google.cloud.cpp.compute.rollout_plans.v1.DeleteRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L86}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -167,7 +169,7 @@ class RolloutPlansClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.rollout_plans.v1.DeleteRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L85}
+  /// [google.cloud.cpp.compute.rollout_plans.v1.DeleteRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L86}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -225,8 +227,8 @@ class RolloutPlansClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.rollout_plans.v1.GetRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L114}
-  /// [google.cloud.cpp.compute.v1.RolloutPlan]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_137.proto#L30}
+  /// [google.cloud.cpp.compute.rollout_plans.v1.GetRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L115}
+  /// [google.cloud.cpp.compute.v1.RolloutPlan]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_143.proto#L30}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::RolloutPlan> GetRolloutPlan(
@@ -257,8 +259,8 @@ class RolloutPlansClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.rollout_plans.v1.GetRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L114}
-  /// [google.cloud.cpp.compute.v1.RolloutPlan]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_137.proto#L30}
+  /// [google.cloud.cpp.compute.rollout_plans.v1.GetRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L115}
+  /// [google.cloud.cpp.compute.v1.RolloutPlan]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_143.proto#L30}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::RolloutPlan> GetRolloutPlan(
@@ -293,7 +295,7 @@ class RolloutPlansClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.rollout_plans.v1.InsertRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L125}
+  /// [google.cloud.cpp.compute.rollout_plans.v1.InsertRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L126}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -349,7 +351,7 @@ class RolloutPlansClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.rollout_plans.v1.InsertRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L125}
+  /// [google.cloud.cpp.compute.rollout_plans.v1.InsertRolloutPlanRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L126}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -415,8 +417,8 @@ class RolloutPlansClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.rollout_plans.v1.ListRolloutPlansRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L154}
-  /// [google.cloud.cpp.compute.v1.RolloutPlan]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_137.proto#L30}
+  /// [google.cloud.cpp.compute.rollout_plans.v1.ListRolloutPlansRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L155}
+  /// [google.cloud.cpp.compute.v1.RolloutPlan]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_143.proto#L30}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::RolloutPlan> ListRolloutPlans(
@@ -455,8 +457,8 @@ class RolloutPlansClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.rollout_plans.v1.ListRolloutPlansRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L154}
-  /// [google.cloud.cpp.compute.v1.RolloutPlan]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_137.proto#L30}
+  /// [google.cloud.cpp.compute.rollout_plans.v1.ListRolloutPlansRequest]: @cloud_cpp_reference_link{google/cloud/compute/rollout_plans/v1/rollout_plans.proto#L155}
+  /// [google.cloud.cpp.compute.v1.RolloutPlan]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_143.proto#L30}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::RolloutPlan> ListRolloutPlans(

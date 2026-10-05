@@ -37,6 +37,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the regions resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/regions
 ///
+/// This client uses Regions version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -121,8 +123,8 @@ class RegionsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.regions.v1.GetRegionRequest]: @cloud_cpp_reference_link{google/cloud/compute/regions/v1/regions.proto#L94}
-  /// [google.cloud.cpp.compute.v1.Region]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_116.proto#L32}
+  /// [google.cloud.cpp.compute.regions.v1.GetRegionRequest]: @cloud_cpp_reference_link{google/cloud/compute/regions/v1/regions.proto#L95}
+  /// [google.cloud.cpp.compute.v1.Region]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_122.proto#L32}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Region> GetRegion(
@@ -169,8 +171,8 @@ class RegionsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.regions.v1.GetRegionRequest]: @cloud_cpp_reference_link{google/cloud/compute/regions/v1/regions.proto#L94}
-  /// [google.cloud.cpp.compute.v1.Region]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_116.proto#L32}
+  /// [google.cloud.cpp.compute.regions.v1.GetRegionRequest]: @cloud_cpp_reference_link{google/cloud/compute/regions/v1/regions.proto#L95}
+  /// [google.cloud.cpp.compute.v1.Region]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_122.proto#L32}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Region> GetRegion(
@@ -223,8 +225,8 @@ class RegionsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.regions.v1.ListRegionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/regions/v1/regions.proto#L105}
-  /// [google.cloud.cpp.compute.v1.Region]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_116.proto#L32}
+  /// [google.cloud.cpp.compute.regions.v1.ListRegionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/regions/v1/regions.proto#L106}
+  /// [google.cloud.cpp.compute.v1.Region]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_122.proto#L32}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::Region> ListRegions(
@@ -281,8 +283,8 @@ class RegionsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.regions.v1.ListRegionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/regions/v1/regions.proto#L105}
-  /// [google.cloud.cpp.compute.v1.Region]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_116.proto#L32}
+  /// [google.cloud.cpp.compute.regions.v1.ListRegionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/regions/v1/regions.proto#L106}
+  /// [google.cloud.cpp.compute.v1.Region]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_122.proto#L32}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::Region> ListRegions(

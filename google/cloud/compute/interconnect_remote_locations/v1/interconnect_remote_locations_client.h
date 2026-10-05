@@ -38,6 +38,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the interconnectRemoteLocations resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/interconnectRemoteLocations
 ///
+/// This client uses InterconnectRemoteLocations version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -113,8 +115,8 @@ class InterconnectRemoteLocationsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.interconnect_remote_locations.v1.GetInterconnectRemoteLocationRequest]: @cloud_cpp_reference_link{google/cloud/compute/interconnect_remote_locations/v1/interconnect_remote_locations.proto#L63}
-  /// [google.cloud.cpp.compute.v1.InterconnectRemoteLocation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_091.proto#L30}
+  /// [google.cloud.cpp.compute.interconnect_remote_locations.v1.GetInterconnectRemoteLocationRequest]: @cloud_cpp_reference_link{google/cloud/compute/interconnect_remote_locations/v1/interconnect_remote_locations.proto#L64}
+  /// [google.cloud.cpp.compute.v1.InterconnectRemoteLocation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_094.proto#L30}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::InterconnectRemoteLocation>
@@ -147,8 +149,8 @@ class InterconnectRemoteLocationsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.interconnect_remote_locations.v1.GetInterconnectRemoteLocationRequest]: @cloud_cpp_reference_link{google/cloud/compute/interconnect_remote_locations/v1/interconnect_remote_locations.proto#L63}
-  /// [google.cloud.cpp.compute.v1.InterconnectRemoteLocation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_091.proto#L30}
+  /// [google.cloud.cpp.compute.interconnect_remote_locations.v1.GetInterconnectRemoteLocationRequest]: @cloud_cpp_reference_link{google/cloud/compute/interconnect_remote_locations/v1/interconnect_remote_locations.proto#L64}
+  /// [google.cloud.cpp.compute.v1.InterconnectRemoteLocation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_094.proto#L30}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::InterconnectRemoteLocation>
@@ -186,8 +188,8 @@ class InterconnectRemoteLocationsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.interconnect_remote_locations.v1.ListInterconnectRemoteLocationsRequest]: @cloud_cpp_reference_link{google/cloud/compute/interconnect_remote_locations/v1/interconnect_remote_locations.proto#L76}
-  /// [google.cloud.cpp.compute.v1.InterconnectRemoteLocation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_091.proto#L30}
+  /// [google.cloud.cpp.compute.interconnect_remote_locations.v1.ListInterconnectRemoteLocationsRequest]: @cloud_cpp_reference_link{google/cloud/compute/interconnect_remote_locations/v1/interconnect_remote_locations.proto#L77}
+  /// [google.cloud.cpp.compute.v1.InterconnectRemoteLocation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_094.proto#L30}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::InterconnectRemoteLocation>
@@ -228,8 +230,8 @@ class InterconnectRemoteLocationsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.interconnect_remote_locations.v1.ListInterconnectRemoteLocationsRequest]: @cloud_cpp_reference_link{google/cloud/compute/interconnect_remote_locations/v1/interconnect_remote_locations.proto#L76}
-  /// [google.cloud.cpp.compute.v1.InterconnectRemoteLocation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_091.proto#L30}
+  /// [google.cloud.cpp.compute.interconnect_remote_locations.v1.ListInterconnectRemoteLocationsRequest]: @cloud_cpp_reference_link{google/cloud/compute/interconnect_remote_locations/v1/interconnect_remote_locations.proto#L77}
+  /// [google.cloud.cpp.compute.v1.InterconnectRemoteLocation]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_094.proto#L30}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::InterconnectRemoteLocation>

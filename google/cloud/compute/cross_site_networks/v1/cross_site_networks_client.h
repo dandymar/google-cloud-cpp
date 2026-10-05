@@ -38,6 +38,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the crossSiteNetworks resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/crossSiteNetworks
 ///
+/// This client uses CrossSiteNetworks version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -115,7 +117,7 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.DeleteCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L103}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.DeleteCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L104}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -169,7 +171,7 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.DeleteCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L103}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.DeleteCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L104}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -228,8 +230,8 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.GetCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L133}
-  /// [google.cloud.cpp.compute.v1.CrossSiteNetwork]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L28}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.GetCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L134}
+  /// [google.cloud.cpp.compute.v1.CrossSiteNetwork]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_028.proto#L28}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::CrossSiteNetwork>
@@ -260,8 +262,8 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.GetCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L133}
-  /// [google.cloud.cpp.compute.v1.CrossSiteNetwork]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L28}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.GetCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L134}
+  /// [google.cloud.cpp.compute.v1.CrossSiteNetwork]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_028.proto#L28}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::CrossSiteNetwork>
@@ -297,7 +299,7 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.InsertCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L144}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.InsertCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L145}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -356,7 +358,7 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.InsertCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L144}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.InsertCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L145}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -423,8 +425,8 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.ListCrossSiteNetworksRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L177}
-  /// [google.cloud.cpp.compute.v1.CrossSiteNetwork]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L28}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.ListCrossSiteNetworksRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L178}
+  /// [google.cloud.cpp.compute.v1.CrossSiteNetwork]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_028.proto#L28}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::CrossSiteNetwork>
@@ -463,8 +465,8 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.ListCrossSiteNetworksRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L177}
-  /// [google.cloud.cpp.compute.v1.CrossSiteNetwork]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_027.proto#L28}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.ListCrossSiteNetworksRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L178}
+  /// [google.cloud.cpp.compute.v1.CrossSiteNetwork]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_028.proto#L28}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::CrossSiteNetwork>
@@ -504,7 +506,7 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.PatchCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L278}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.PatchCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L272}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>
@@ -567,7 +569,7 @@ class CrossSiteNetworksClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.cross_site_networks.v1.PatchCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L278}
+  /// [google.cloud.cpp.compute.cross_site_networks.v1.PatchCrossSiteNetworkRequest]: @cloud_cpp_reference_link{google/cloud/compute/cross_site_networks/v1/cross_site_networks.proto#L272}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>>

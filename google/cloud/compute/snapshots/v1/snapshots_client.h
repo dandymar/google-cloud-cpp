@@ -39,6 +39,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the snapshots resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/snapshots
 ///
+/// This client uses Snapshots version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -120,7 +122,7 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.DeleteSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L167}
+  /// [google.cloud.cpp.compute.snapshots.v1.DeleteSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L168}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> DeleteSnapshot(
@@ -180,7 +182,7 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.DeleteSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L167}
+  /// [google.cloud.cpp.compute.snapshots.v1.DeleteSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L168}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> DeleteSnapshot(
@@ -238,8 +240,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.GetSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L211}
-  /// [google.cloud.cpp.compute.v1.Snapshot]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_146.proto#L31}
+  /// [google.cloud.cpp.compute.snapshots.v1.GetSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L212}
+  /// [google.cloud.cpp.compute.v1.Snapshot]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_152.proto#L31}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Snapshot> GetSnapshot(
@@ -270,8 +272,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.GetSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L211}
-  /// [google.cloud.cpp.compute.v1.Snapshot]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_146.proto#L31}
+  /// [google.cloud.cpp.compute.snapshots.v1.GetSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L212}
+  /// [google.cloud.cpp.compute.v1.Snapshot]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_152.proto#L31}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Snapshot> GetSnapshot(
@@ -300,8 +302,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.GetIamPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L196}
-  /// [google.cloud.cpp.compute.v1.Policy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_009.proto#L317}
+  /// [google.cloud.cpp.compute.snapshots.v1.GetIamPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L197}
+  /// [google.cloud.cpp.compute.v1.Policy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_010.proto#L317}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Policy> GetIamPolicy(
@@ -333,8 +335,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.GetIamPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L196}
-  /// [google.cloud.cpp.compute.v1.Policy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_009.proto#L317}
+  /// [google.cloud.cpp.compute.snapshots.v1.GetIamPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L197}
+  /// [google.cloud.cpp.compute.v1.Policy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_010.proto#L317}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Policy> GetIamPolicy(
@@ -373,7 +375,7 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.InsertSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L222}
+  /// [google.cloud.cpp.compute.snapshots.v1.InsertSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L223}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> InsertSnapshot(
@@ -432,7 +434,7 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.InsertSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L222}
+  /// [google.cloud.cpp.compute.snapshots.v1.InsertSnapshotRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L223}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> InsertSnapshot(
@@ -499,8 +501,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.ListSnapshotsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L251}
-  /// [google.cloud.cpp.compute.v1.Snapshot]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_146.proto#L31}
+  /// [google.cloud.cpp.compute.snapshots.v1.ListSnapshotsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L252}
+  /// [google.cloud.cpp.compute.v1.Snapshot]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_152.proto#L31}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::Snapshot> ListSnapshots(
@@ -540,8 +542,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.ListSnapshotsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L251}
-  /// [google.cloud.cpp.compute.v1.Snapshot]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_146.proto#L31}
+  /// [google.cloud.cpp.compute.snapshots.v1.ListSnapshotsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L252}
+  /// [google.cloud.cpp.compute.v1.Snapshot]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_152.proto#L31}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::Snapshot> ListSnapshots(
@@ -570,8 +572,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.SetIamPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L352}
-  /// [google.cloud.cpp.compute.v1.Policy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_009.proto#L317}
+  /// [google.cloud.cpp.compute.snapshots.v1.SetIamPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L346}
+  /// [google.cloud.cpp.compute.v1.Policy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_010.proto#L317}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Policy> SetIamPolicy(
@@ -605,8 +607,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.SetIamPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L352}
-  /// [google.cloud.cpp.compute.v1.Policy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_009.proto#L317}
+  /// [google.cloud.cpp.compute.snapshots.v1.SetIamPolicyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L346}
+  /// [google.cloud.cpp.compute.v1.Policy]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_010.proto#L317}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::Policy> SetIamPolicy(
@@ -643,7 +645,7 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.SetLabelsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L368}
+  /// [google.cloud.cpp.compute.snapshots.v1.SetLabelsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L362}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> SetLabels(
@@ -701,7 +703,7 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.SetLabelsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L368}
+  /// [google.cloud.cpp.compute.snapshots.v1.SetLabelsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L362}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> SetLabels(
@@ -760,8 +762,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.TestIamPermissionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L387}
-  /// [google.cloud.cpp.compute.v1.TestPermissionsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_171.proto#L30}
+  /// [google.cloud.cpp.compute.snapshots.v1.TestIamPermissionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L381}
+  /// [google.cloud.cpp.compute.v1.TestPermissionsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_177.proto#L30}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::TestPermissionsResponse>
@@ -795,8 +797,8 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.TestIamPermissionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L387}
-  /// [google.cloud.cpp.compute.v1.TestPermissionsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_171.proto#L30}
+  /// [google.cloud.cpp.compute.snapshots.v1.TestIamPermissionsRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L381}
+  /// [google.cloud.cpp.compute.v1.TestPermissionsResponse]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_177.proto#L30}
   ///
   // clang-format on
   StatusOr<google::cloud::cpp::compute::v1::TestPermissionsResponse>
@@ -833,7 +835,7 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.UpdateKmsKeyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L402}
+  /// [google.cloud.cpp.compute.snapshots.v1.UpdateKmsKeyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L396}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> UpdateKmsKey(
@@ -891,7 +893,7 @@ class SnapshotsClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.snapshots.v1.UpdateKmsKeyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L402}
+  /// [google.cloud.cpp.compute.snapshots.v1.UpdateKmsKeyRequest]: @cloud_cpp_reference_link{google/cloud/compute/snapshots/v1/snapshots.proto#L396}
   ///
   // clang-format on
   future<StatusOr<google::cloud::cpp::compute::v1::Operation>> UpdateKmsKey(

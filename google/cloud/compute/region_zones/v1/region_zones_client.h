@@ -37,6 +37,8 @@ GOOGLE_CLOUD_CPP_INLINE_NAMESPACE_BEGIN
 /// Service for the regionZones resource.
 /// https://cloud.google.com/compute/docs/reference/rest/v1/regionZones
 ///
+/// This client uses RegionZones version 2026-09-01.
+///
 /// @par Equality
 ///
 /// Instances of this class created via copy-construction or copy-assignment
@@ -116,8 +118,8 @@ class RegionZonesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_zones.v1.ListRegionZonesRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_zones/v1/region_zones.proto#L51}
-  /// [google.cloud.cpp.compute.v1.Zone]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_031.proto#L140}
+  /// [google.cloud.cpp.compute.region_zones.v1.ListRegionZonesRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_zones/v1/region_zones.proto#L52}
+  /// [google.cloud.cpp.compute.v1.Zone]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_032.proto#L140}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::Zone> ListRegionZones(
@@ -157,8 +159,8 @@ class RegionZonesClient {
   /// [`future`]: @ref google::cloud::future
   /// [`StatusOr`]: @ref google::cloud::StatusOr
   /// [`Status`]: @ref google::cloud::Status
-  /// [google.cloud.cpp.compute.region_zones.v1.ListRegionZonesRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_zones/v1/region_zones.proto#L51}
-  /// [google.cloud.cpp.compute.v1.Zone]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_031.proto#L140}
+  /// [google.cloud.cpp.compute.region_zones.v1.ListRegionZonesRequest]: @cloud_cpp_reference_link{google/cloud/compute/region_zones/v1/region_zones.proto#L52}
+  /// [google.cloud.cpp.compute.v1.Zone]: @cloud_cpp_reference_link{google/cloud/compute/v1/internal/common_032.proto#L140}
   ///
   // clang-format on
   StreamRange<google::cloud::cpp::compute::v1::Zone> ListRegionZones(
